@@ -1,0 +1,55 @@
+import os
+import cv2
+
+# Diretório onde estão localizadas as imagens
+diretorio = './elenco-palmeiras'
+diretorio_resultados = './resultados'
+# Lista de nomes de arquivo das imagens
+arquivos_imagem = [
+    'elenco-palmeiras.jpg',
+    'elenco-palmeiras2.jpg',
+    'elenco-palmeiras3.jpg',
+    'elenco-palmeiras4.jpg',
+    'elenco-palmeiras5.jpg',
+    './jogadores-palmeiras/jogador1.jpg',
+    './jogadores-palmeiras/jogador2.jpg',
+    './jogadores-palmeiras/jogador3.jpg',
+    './jogadores-palmeiras/jogador4.jpg',
+    './jogadores-palmeiras/jogador5.jpg'
+]
+
+# Caminho completo para cada arquivo de imagem
+caminhos_imagem = [os.path.join(diretorio, arquivo) for arquivo in arquivos_imagem]
+
+if not os.path.exists(diretorio_resultados):
+    os.makedirs(diretorio_resultados)
+
+# Carrega o classificador pré-treinado para detecção de rostos
+df = cv2.CascadeClassifier('./haarcascades/haarcascade_frontalface_alt.xml')
+
+# Loop sobre as imagens
+for caminho_imagem in caminhos_imagem:
+    # Carrega a imagem
+    imgC = cv2.imread(caminho_imagem)
+    imgPB = cv2.cvtColor(imgC, cv2.COLOR_BGR2GRAY)
+
+    # Realiza a detecção de rostos na imagem em escala de cinza
+    faces = df.detectMultiScale(imgPB, scaleFactor=1.2, minNeighbors=7, minSize=(30, 30), flags=cv2.CASCADE_SCALE_IMAGE)
+
+    # Desenha retângulos ao redor dos rostos detectados
+    for (x, y, w, h) in faces:
+        cv2.rectangle(imgC, (x, y), (x + w, y + h), (0, 255, 255), 7)
+
+    # Redimensiona a imagem para exibição
+    alt = int(imgC.shape[0] / imgC.shape[1] * 640)
+    imgC = cv2.resize(imgC, (640, alt), interpolation=cv2.INTER_CUBIC)
+
+    # Exibe a imagem com o número de rostos encontrados
+    cv2.imshow(str(len(faces)) + ' face(s) encontrada(s).', imgC)
+    cv2.waitKey(0)
+    cv2.destroyAllWindows()
+
+    nome_resultado = os.path.splitext(os.path.basename(caminho_imagem))[0] + '_resultado.jpg'
+    caminho_resultado = os.path.join(diretorio_resultados, nome_resultado)
+    cv2.imwrite(caminho_resultado, imgC)
+    print(f"Resultado salvo em: {caminho_resultado}")

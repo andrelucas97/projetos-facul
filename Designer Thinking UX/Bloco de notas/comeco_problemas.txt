@@ -1,0 +1,39 @@
+1- colocar no doc (word/pdf) o nome de todos os integrantes
+da equipe de projeto
+
+2- Problema
+
+escrever em um paragrafo entre 3 a 8 linhas!
+
+depois colocar no final:
+	discutir
+	conversar
+	sair na mao
+	fechar acordo de paz
+-- qual o meio usado pra comunicação da equipe de projeto
+e o que utilizaram pra se comunicar (video e audio, msg, etc)
+e qual plataforma
+
+
+
+
+EXERCÍCIO DE AULA UX E DESING THINKING:
+
+1. Colocar no documento o nome de todos os integrantes da equipe de projeto;
+
+2. Um Problema (tema: mais ou menos) 
+Desenvolver em cima de uma plataforma digital. 
+Pensar em um problema (qualquer problema), onde conseguiremos criar soluções para ele;
+
+	Ex 1: Organização da informação jornalística para dar saída a uma reportagem. 
+	Desenvolveram um software (necessário criar um processo, cultura)
+
+	Ex 2: Problema = Falha de comunicação entre aluno e professor 
+	Esquema: o professor dava dicas antes das entregas dos trabalhos, criando um processo entre os professores e alunos.
+
+
+3. Escrever um parágrafo entre 3 a 8 linhas explicando o problema;
+
+
+4. Colocar no final qual meio foi usado para a comunicação da equipe de projetos e qual foi a plataforma.
+

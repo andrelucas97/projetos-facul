@@ -1,0 +1,5 @@
+arquivo = open('compras.txt', 'r')
+print(arquivo.readline())
+print(arquivo.readline())
+print(arquivo.readline())
+arquivo.close()

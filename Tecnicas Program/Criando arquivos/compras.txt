@@ -1,0 +1,7 @@
+item: cadeira | quantidade: 7
+item: mesa | quantidade: 2
+item: lousa | quantidade: 1
+item: computador | quantidade: 2
+item: mouse | quantidade: 1
+item: teclado | quantidade: 2
+item: microfone | quantidade: 4

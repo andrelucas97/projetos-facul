@@ -1,0 +1,4 @@
+caixa elementos - .col-lg-3
+titulos - h3 a
+preço - .price_color
+estoque - .availability
